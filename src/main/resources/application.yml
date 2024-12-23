@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: SkillTestingBE
+  profiles:
+    active: ${SPRING_ENV:local}
