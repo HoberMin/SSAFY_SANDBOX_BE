@@ -1,16 +1,11 @@
-package com.example.skilltestingbe;
+package com.example.skilltestingbe.qa.repository.domain;
 
 import java.time.LocalDateTime;
 
 import jakarta.persistence.*;
+import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
@@ -26,7 +21,7 @@ public class Qa {
 	@Column(name = "qa_id")
 	private Long id;
 
-	@Column(nullable = false)
+	@Column(nullable = false, name = "class_number")
 	private String classNumber;
 
 	@Column(nullable = false)
@@ -39,5 +34,6 @@ public class Qa {
 	private String content;
 
 	@CreatedDate
+	@Column(name = "created_at")
 	private LocalDateTime createdAt;
 }

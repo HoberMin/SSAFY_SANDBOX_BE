@@ -1,5 +1,6 @@
-package com.example.skilltestingbe;
+package com.example.skilltestingbe.qa.repository;
 
+import com.example.skilltestingbe.qa.repository.domain.Qa;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

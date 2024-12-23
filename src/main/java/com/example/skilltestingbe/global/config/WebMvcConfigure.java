@@ -1,4 +1,4 @@
-package com.example.skilltestingbe;
+package com.example.skilltestingbe.global.config;
 
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
