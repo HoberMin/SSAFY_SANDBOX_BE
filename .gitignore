@@ -38,3 +38,4 @@ out/
 
 src/main/resources/application-local.yml
 src/main/resources/database.properties
+src/main/resources/auth.properties
