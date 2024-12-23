@@ -1,7 +1,7 @@
-package com.example.skilltestingbe.qa.presentation;
+package com.example.skilltestingbe.api.qa.presentation;
 
-import com.example.skilltestingbe.qa.dto.QaRegisterDto;
-import com.example.skilltestingbe.qa.service.QaService;
+import com.example.skilltestingbe.api.qa.dto.QaRegisterDto;
+import com.example.skilltestingbe.api.qa.service.QaService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

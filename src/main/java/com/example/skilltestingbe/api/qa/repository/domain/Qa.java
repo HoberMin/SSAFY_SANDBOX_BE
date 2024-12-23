@@ -1,4 +1,4 @@
-package com.example.skilltestingbe.qa.repository.domain;
+package com.example.skilltestingbe.api.qa.repository.domain;
 
 import java.time.LocalDateTime;
 

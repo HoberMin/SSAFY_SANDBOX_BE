@@ -1,4 +1,4 @@
-package com.example.skilltestingbe.qa.dto;
+package com.example.skilltestingbe.api.qa.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

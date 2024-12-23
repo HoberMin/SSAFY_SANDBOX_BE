@@ -1,8 +1,8 @@
-package com.example.skilltestingbe.qa.service;
+package com.example.skilltestingbe.api.qa.service;
 
-import com.example.skilltestingbe.qa.dto.QaRegisterDto;
-import com.example.skilltestingbe.qa.repository.QaRepository;
-import com.example.skilltestingbe.qa.repository.domain.Qa;
+import com.example.skilltestingbe.api.qa.dto.QaRegisterDto;
+import com.example.skilltestingbe.api.qa.repository.QaRepository;
+import com.example.skilltestingbe.api.qa.repository.domain.Qa;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
