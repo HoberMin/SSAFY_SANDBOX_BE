@@ -20,7 +20,7 @@ public class Todo {
     private Boolean completed;
 
     @Builder
-    public Todo(String content) {
+    protected Todo(String content) {
         this.content = content;
         this.completed = false;
     }
