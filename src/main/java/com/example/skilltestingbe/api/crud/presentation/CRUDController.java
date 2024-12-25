@@ -45,7 +45,7 @@ public class CRUDController {
     }
 
     @DeleteMapping("/{todoId}")
-    @Operation(summary = "Todo 조회", description = "일정 삭제")
+    @Operation(summary = "Todo 삭제", description = "일정 삭제")
     @ApiResponse(responseCode = "204", description = "todo id에 해당하는 일정을 삭제합니다.")
     public ResponseEntity<?> deleteTodo(@PathVariable long todoId) {
         crudService.deleteById(todoId);
