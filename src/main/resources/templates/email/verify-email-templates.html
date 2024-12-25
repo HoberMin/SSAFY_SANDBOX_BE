@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSAFY SANDBOX 인증 코드</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f4f4f4;">
+<table role="presentation" style="width: 100%; border-collapse: collapse;">
+    <tr>
+        <td style="padding: 20px 0; text-align: center; background-color: #ffffff;">
+            <table role="presentation"
+                   style="width: 600px; margin: 0 auto; background-color: #ffffff; border-collapse: collapse;">
+                <tr>
+                    <td style="padding: 40px 30px; text-align: center;">
+                        <h1 style="margin: 0; font-size: 24px; color: #1E88E5;">SSAFY SANDBOX</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 0 30px;">
+                        <p style="margin: 0; font-size: 16px; line-height: 24px; color: #333333;">
+                            안녕하세요,<br><br>
+                            SSAFY SANDBOX 이메일 인증 코드입니다.<br>
+                            아래의 인증 코드를 입력해주세요.
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 30px;">
+                        <table role="presentation" style="width: 100%; border-collapse: collapse;">
+                            <tr>
+                                <td style="padding: 20px; background-color: #f8f9fa; border-radius: 4px; text-align: center;">
+                                        <span th:text="${code}"
+                                                style="font-family: 'Courier New', monospace;
+                                                 font-size: 32px;
+                                                  font-weight: bold;
+                                                   color: #1E88E5;
+                                                    letter-spacing: 5px;">
+                                            123456
+                                        </span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 0 30px;">
+                        <p style="margin: 0; font-size: 14px; line-height: 24px; color: #666666;">
+                            본 인증 코드는 5분간 유효합니다.<br>
+                            본인이 요청하지 않은 경우 이 메일을 무시하셔도 됩니다.
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 30px; text-align: center; color: #999999; font-size: 12px;">
+                        <p style="margin: 0;">
+                            © SSAFY SANDBOX. All rights reserved.<br>
+                            본 메일은 발신전용입니다.
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
