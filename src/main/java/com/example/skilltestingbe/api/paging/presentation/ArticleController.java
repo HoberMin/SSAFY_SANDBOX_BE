@@ -27,7 +27,7 @@ public class ArticleController {
 
     private final ArticleService articleService;
     private static final String DEFAULT_PAGE_NO = "1";
-    private static final String DEFAULT_PAGE_SIZE = "6";
+    private static final String DEFAULT_ITEM_SIZE = "6";
     private static final String DEFAULT_CURSOR_ID = "0";
 
     @GetMapping("/paging/offset")
@@ -36,7 +36,7 @@ public class ArticleController {
     content = @Content(schema = @Schema(implementation = ArticlesByOffsetResponse.class)))
     public ResponseEntity<?> findArticleByOffset(
             @RequestParam(defaultValue = DEFAULT_PAGE_NO) Integer page,
-            @RequestParam(defaultValue = DEFAULT_PAGE_SIZE) Integer size) {
+            @RequestParam(defaultValue = DEFAULT_ITEM_SIZE) Integer size) {
         Pageable pageable = PageRequest.of(page - 1, size);
         Page<ArticleResponse> articles = articleService.findArticleByOffset(pageable);
 
@@ -58,7 +58,7 @@ public class ArticleController {
     @ApiResponse(responseCode = "200", description = "cursor 기반으로 조회된 articles",
             content = @Content(schema = @Schema(implementation = ArticlesByCursorResponse.class)))
     public ResponseEntity<?> findArticleByCursor(
-            @RequestParam(defaultValue = DEFAULT_PAGE_SIZE) Integer size,
+            @RequestParam(defaultValue = DEFAULT_ITEM_SIZE) Integer size,
             @RequestParam(defaultValue = DEFAULT_CURSOR_ID) Long cursorId) {
         Pageable pageable = PageRequest.of(0, size);
         List<ArticleResponse> articles = articleService.findArticleByCursor(cursorId, pageable);
