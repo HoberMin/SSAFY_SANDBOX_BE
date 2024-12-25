@@ -22,18 +22,18 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/articles")
-@Tag(name = "PAGING API", description = "무한 스크롤 API")
+@Tag(name = "PAGING API", description = "Paging 페이지 API")
 public class ArticleController {
 
     private final ArticleService articleService;
     private static final String DEFAULT_PAGE_NO = "1";
-    private static final String DEFAULT_PAGE_SIZE = "10";
+    private static final String DEFAULT_PAGE_SIZE = "6";
     private static final String DEFAULT_CURSOR_ID = "0";
 
     @GetMapping("/paging/offset")
-    @Operation(summary = "Offset 기반 조회", description = "offset 기반으로 게시글 조회")
-    @ApiResponse(responseCode = "200", description = "조회 성공",
-    content = @Content(schema = @Schema()))
+    @Operation(summary = "Offset 기반 조회", description = "offset 기반으로 article 조회")
+    @ApiResponse(responseCode = "200", description = "offset 기반으로 조회된 articles",
+    content = @Content(schema = @Schema(implementation = ArticlesByOffsetResponse.class)))
     public ResponseEntity<?> findArticleByOffset(
             @RequestParam(defaultValue = DEFAULT_PAGE_NO) Integer page,
             @RequestParam(defaultValue = DEFAULT_PAGE_SIZE) Integer size) {
@@ -52,7 +52,11 @@ public class ArticleController {
         return ResponseEntity.ok().body(articlesResponse);
     }
 
+
     @GetMapping("/paging/cursor")
+    @Operation(summary = "Cursor 기반 조회", description = "cursor 기반으로 article 조회")
+    @ApiResponse(responseCode = "200", description = "cursor 기반으로 조회된 articles",
+            content = @Content(schema = @Schema(implementation = ArticlesByCursorResponse.class)))
     public ResponseEntity<?> findArticleByCursor(
             @RequestParam(defaultValue = DEFAULT_PAGE_SIZE) Integer size,
             @RequestParam(defaultValue = DEFAULT_CURSOR_ID) Long cursorId) {
@@ -65,7 +69,7 @@ public class ArticleController {
                 .articles(articles)
                 .build();
 
-        return ResponseEntity.ok(articlesResponse);
+        return ResponseEntity.ok().body(articlesResponse);
     }
 
     @Hidden

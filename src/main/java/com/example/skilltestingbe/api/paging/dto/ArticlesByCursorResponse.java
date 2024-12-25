@@ -1,5 +1,7 @@
 package com.example.skilltestingbe.api.paging.dto;
 
+import io.swagger.v3.oas.annotations.media.ArraySchema;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
@@ -12,5 +14,7 @@ import java.util.List;
 public class ArticlesByCursorResponse {
 
     private Long lastId;
+
+    @ArraySchema(schema = @Schema(implementation = ArticleResponse.class))
     private List<ArticleResponse> articles;
 }
