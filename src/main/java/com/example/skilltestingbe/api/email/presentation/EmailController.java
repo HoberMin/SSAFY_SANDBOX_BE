@@ -49,7 +49,7 @@ public class EmailController {
     @PostMapping("/authentication")
     @Operation(summary = "인증 코드 검증", description = "Email로 전송된 인증 코드 검증")
     @ApiResponse(responseCode = "200", description = "인증 코드 검증 결과 반환",
-            content = @Content(schema = @Schema(implementation = SendEmailDto.class),
+            content = @Content(schema = @Schema(implementation = VerifyEmailDto.class),
             examples = {
                     @ExampleObject(
                             name = "인증 성공",
