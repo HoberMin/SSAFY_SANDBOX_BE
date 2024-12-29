@@ -15,23 +15,9 @@ import org.springframework.context.annotation.Configuration;
 @OpenAPIDefinition(
         info = @Info(title = "SSAFY SANDBOX API SPECIFICATION",
                 description = "Specification for service SSAFY SANDBOX",
-                version = "v1.0.0")
-//        servers = @Server(url = "https://api-server.store", description = "HTTPS server")
+                version = "v1.0.0"),
+        servers = @Server(url = "https://api-server.store", description = "HTTPS server")
 )
-@SecuritySchemes(value = {
-        @SecurityScheme(
-                name = "ACCESS",
-                type = SecuritySchemeType.APIKEY,
-                in = SecuritySchemeIn.HEADER,
-                paramName = "access_token"
-        ),
-        @SecurityScheme(
-                name = "REFRESH",
-                type = SecuritySchemeType.APIKEY,
-                in = SecuritySchemeIn.COOKIE,
-                paramName = "refresh_token"
-        )
-})
 @Configuration
 @RequiredArgsConstructor
 public class SwaggerConfig {
