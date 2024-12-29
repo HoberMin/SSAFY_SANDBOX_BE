@@ -12,17 +12,22 @@ public class WebMvcConfigure implements WebMvcConfigurer {
 
 	private final String frontUrl;
 	private final String backPattern;
+	private final String swagger;
 
 	@Autowired
-	public WebMvcConfigure(@Value("${FRONT.URL}") String frontUrl, @Value("${BACK.PATTERN}") String backPattern) {
+	public WebMvcConfigure(
+			@Value("${FRONT.URL}") String frontUrl,
+			@Value("${BACK.PATTERN}") String backPattern,
+			@Value("${SWAGGER.URL}") String swaggerUrl) {
 		this.frontUrl = frontUrl;
 		this.backPattern = backPattern;
+		this.swagger = swaggerUrl;
 	}
 
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
 		registry.addMapping(backPattern)
-				.allowedOrigins(frontUrl)
+				.allowedOrigins(frontUrl, swagger)
 				.allowedMethods(
 						HttpMethod.GET.name(),
 						HttpMethod.POST.name(),
